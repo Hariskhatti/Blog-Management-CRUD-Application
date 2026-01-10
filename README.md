@@ -3,7 +3,7 @@
 ### *Full-Stack Spring Boot + PostgreSQL Web Application*
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Spring%20Boot-2.7.15-brightgreen?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Spring%20Boot-4.0.1-brightgreen?style=for-the-badge">
   <img src="https://img.shields.io/badge/PostgreSQL-Database-blue?style=for-the-badge">
   <img src="https://img.shields.io/badge/Thymeleaf-Frontend-orange?style=for-the-badge">
   <img src="https://img.shields.io/badge/Status-Stable-brightgreen?style=for-the-badge">
