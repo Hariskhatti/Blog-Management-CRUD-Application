@@ -180,6 +180,4 @@ This project is for **educational/demo purposes only**.
 
 ---
 
-Agar chaho, mai ye **README.md file generate kar ke direct download link** bhi de doon, ready for GitHub push.
 
-Kya mai woh kar doon?
