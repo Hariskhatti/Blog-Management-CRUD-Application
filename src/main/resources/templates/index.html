@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Blog Index</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #eef2f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
+        /* -------------------- Blog Card -------------------- */
+        .blog-card {
+            background-color: #fff;
+            padding: 22px 26px;
+            margin-bottom: 22px; /* IMPORTANT: spacing between blogs */
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .blog-title {
+            margin-bottom: 6px;
+        }
+
+        .blog-title a {
+            font-size: 22px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #2c3e50;
+            line-height: 1.3;
+        }
+
+        .blog-title a:hover {
+            color: #007bff;
+        }
+
+        .blog-date {
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* -------------------- Responsive -------------------- */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                margin: 20px auto;
+            }
+
+            .blog-title a {
+                font-size: 20px;
+            }
+
+            .blog-card {
+                padding: 16px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>All Blogs</h1>
+
+    <!-- Blog List -->
+    <div th:each="b : ${blogList}" class="blog-card">
+
+        <!-- Title -->
+        <div class="blog-title">
+            <a th:href="@{/blog/{title}(title=${b.title})}"
+               th:text="${b.title}">
+            </a>
+        </div>
+
+        <!-- ✅ Properly formatted date (same approach as before) -->
+        <div class="blog-date">
+            <span th:text="${#temporals.format(b.publishDate, 'MMMM dd, yyyy')}">
+            </span>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
